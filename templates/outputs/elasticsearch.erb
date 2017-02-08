@@ -22,7 +22,7 @@
     # Custom index location
     index: <%= @index %>
 <% end %>
-<% if @http_path && !@http_path.empty? %>  
+<% if @http_path && !@http_path.empty? %>
     # Optional HTTP Path
     path: <%= @http_path %>
 <% end %>
@@ -82,5 +82,3 @@
 
       # Configure maximum TLS version allowed for connection to logstash
       #max_version: 1.2
-
-

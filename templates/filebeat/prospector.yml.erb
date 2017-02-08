@@ -1,25 +1,23 @@
-    -
+    - input_type: <%= @input_type %>
       paths:<% @paths.each do |path| %>
         - <%= path %>
       <%- end -%>
+      encoding: <%= @encoding %>
+<% if @exclude_lines -%>      exclude_lines: <%= @exclude_lines %><% end -%>
+<% if @include_lines -%>      include_lines: <%= @include_lines %><% end -%>
+<% if @exclude_files -%>      exclude_files: <%= @exclude_files %><% end -%>
+      fields_under_root: <%= @fields_under_root %>
+      ignore_older: <%= @ignore_older %>
+      document_type: <%= @document_type %>
+      scan_frequency: <%= @scan_frequency %>
+      harvester_buffer_size: <%= @harvester_buffer_size %>
+      max_bytes: <%= @max_bytes %>
+      tail_files: <%= @tail_files %>
+      symlinks: <%= @symlinks %>
+      backoff: <%= @backoff %>
+      max_backoff: <%= @max_backoff %>
+      backoff_factor: <%= @backoff_factor %>
+      harvester_limit: <%= @harvester_limit %>
       fields:<% @fields.each do |key, value| %>
         <%= key -%>: <%= value %>
       <%- end -%>
-<%- if @encoding -%>      encoding: <%= @encoding %><% end -%>
-<%- if @ignore_older -%>      ignore_older: <%= @ignore_older %><% end -%>
-<%- if @scan_frequency -%>      scan_frequency: <%= @scan_frequency %><% end -%>
-<%- if @harvester_buffer_size -%>      harvester_buffer_size: <%= @harvester_buffer_size %><% end -%>
-<%- if @tail_files -%>      tail_files: <%= @tail_files %><% end -%>
-<%- if @backoff -%>      backoff: <%= @backoff %><% end -%>
-<%- if @max_backoff -%>      max_backoff: <%= @max_backoff %><% end -%>
-<%- if @backoff_factor -%>      backoff_factor: <%= @backoff_factor %><% end -%>
-<%- if @partial_line_waiting -%>      partial_line_waiting: <%= @partial_line_waiting %><% end -%>
-<%- if @force_close_files -%>      force_close_files: <%= @force_close_files %><% end -%>
-<%- if @fields_under_root -%>      fields_under_root: <%= @fields_under_root %><% end -%>
-<%- if @doc_type -%>      document_type: <%= @doc_type %><% end -%>
-<%- if @input_type -%>      input_type: <%= @input_type %><% end -%>
-<%- if @max_bytes -%>      max_bytes: <%= @max_bytes %><% end -%>
-<%- if @multiline -%>      multiline:<% @multiline.each do |key, value| %>
-        <%= key -%>: <%= value -%><%- end -%>
-<% end -%>
-
