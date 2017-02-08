@@ -13,7 +13,6 @@ metricbeat.modules:
 #------------------------------- System Module -------------------------------
 - module: system
   metricsets:
-  <% if @stats_system -%>
     # CPU stats
     - cpu
 
@@ -22,19 +21,16 @@ metricbeat.modules:
 
     # Per CPU core stats
     #- core
-  
+
     # IO stats
-    #- diskio
-  <%- end -%>
-  <%- if @stats_filesystem %>
+    - diskio
+
     # Per filesystem stats
     - filesystem
 
     # File system summary stats
-    #- fsstat
-  <%-end-%>
-  <%- if @stats_proc %>
- 
+    - fsstat
+
     # Memory stats
     - memory
 
@@ -42,9 +38,14 @@ metricbeat.modules:
     - network
 
     # Per process stats
-    - process
-  <%-end-%>
+    # - process
+
+    # Sockets and connection info
+    - socket
   enabled: true
   period:  <%= @period %>
   processes: <%= @procs.to_json %>
 
+  socket.reverse_lookup.enabled: false
+  socket.reverse_lookup.success_ttl: 60s
+  socket.reverse_lookup.failure_ttl: 60s

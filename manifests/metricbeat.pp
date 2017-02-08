@@ -3,9 +3,6 @@ class beats::metricbeat (
   $ensure           = present,
   $period           = 10,
   $procs            = ['.*'],
-  $stats_system     = true,
-  $stats_proc       = true,
-  $stats_filesystem = true,
 ){
 
   case $::osfamily {
