@@ -2,9 +2,6 @@
 class beats::repo::apt() {
 
   include ::apt
-  Class['apt::update'] -> Package['metricbeat']
-  Class['apt::update'] -> Package['filebeat']
-  Class['apt::update'] -> Package['packetbeat']
 
   apt::source { 'elastic-beats':
     comment  => 'Official Elastic beats repositories',
