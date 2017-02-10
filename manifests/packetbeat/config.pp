@@ -11,8 +11,4 @@ class beats::packetbeat::config inherits beats::packetbeat {
     content => template('beats/protocols.header.erb'),
     order   => 10,
   }
-  if $http_enabled { include beats::protocols::http }
-  if $mysql_enabled { include beats::protocols::mysql }
-  if $pgsql_enabled { include beats::protocols::pgsql }
-  if $redis_enabled { include beats::protocols::redis }
 }

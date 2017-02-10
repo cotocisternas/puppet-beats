@@ -35,10 +35,6 @@ class beats (
   $outputs_logstash      = {},
   $outputs_elasticsearch = {},
   $outputs_file          = {},
-  $http_enabled          = true,
-  $pgsql_enabled         = false,
-  $mysql_enabled         = false,
-  $redis_enabled         = false,
   $manage_geoip          = true,
   $manage_repo           = true,
 ){
