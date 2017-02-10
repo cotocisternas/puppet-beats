@@ -1,5 +1,5 @@
 # Packetbeat
-interfaces:
+packetbeat.interfaces:
   device: "<%= @interfaces %>"
 <% if @int_snaplen %>  snaplen: <%= @int_snaplen %><% end -%>
 <% if @int_sniffer_type %>  type: <%= @int_sniffer_type %><% end -%>
