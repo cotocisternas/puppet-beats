@@ -5,16 +5,6 @@ class beats::packetbeat (
   $int_snaplen               = undef,
   $int_sniffer_type          = undef,
   $int_buffer_size           = undef,
-  $http_enabled              = $beats::http_enabled,
-  $mysql_enabled             = $beats::mysql_enabled,
-  $pgsql_enabled             = $beats::pgsql_enabled,
-  $redis_enabled             = $beats::redis_enabled,
-  $http_ports                = ['80', '8080', '8000'],
-  $http_hide_keywords        = [],
-  $http_send_headers         = ['Host'],
-  $http_split_cookie         = true,
-  $http_real_ip_header       = 'X-Forwarded-For',
-  $http_redact_authorization = false,
   $mysql_protocol            = 'mysql',
   $mysql_ports               = ['3306'],
   $mysql_max_rows            = undef,
@@ -46,9 +36,9 @@ class beats::packetbeat (
       service { 'packetbeat':
         ensure => 'stopped',
         enable => false,
-      } 
+      }
     }
-    default: {      
+    default: {
       service { 'packetbeat':
         ensure => running,
         enable => true,

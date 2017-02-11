@@ -8,6 +8,6 @@ class beats::protocols::pgsql (
   concat::fragment {'protocols-pgsql':
     target  => '/etc/packetbeat/packetbeat.yml',
     content => template('beats/protocols/protocols.database.erb'),
-    order   => 13,
+    order   => 11,
   }
 }

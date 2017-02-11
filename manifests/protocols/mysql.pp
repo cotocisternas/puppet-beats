@@ -8,6 +8,6 @@ class beats::protocols::mysql (
   concat::fragment {'protocols-mysql':
     target  => '/etc/packetbeat/packetbeat.yml',
     content => template('beats/protocols/protocols.database.erb'),
-    order   => 12,
+    order   => 11,
   }
 }

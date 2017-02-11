@@ -8,7 +8,7 @@ class beats::packetbeat::config inherits beats::packetbeat {
   }
   concat::fragment {'protocols.header':
     target  => '/etc/packetbeat/packetbeat.yml',
-    content => template('beats/protocols.header.erb'),
+    content => template('beats/packetbeat/protocols.header.erb'),
     order   => 10,
   }
 }

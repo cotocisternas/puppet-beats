@@ -1,15 +1,15 @@
 # HTTP
 class beats::protocols::http (
-  $http_ports           = $beats::packetbeat::config::http_ports,
-  $hide_keywords        = $beats::packetbeat::config::http_hide_keywords,
-  $send_headers         = $beats::packetbeat::config::http_send_headers,
-  $split_cookie         = $beats::packetbeat::config::http_split_cookie,
-  $real_ip_header       = $beats::packetbeat::config::http_real_ip_header,
-  $redact_authorization = $beats::packetbeat::config::http_redact_authorization
+  $http_ports           = ['80', '8080', '8000'],
+  $hide_keywords        = [],
+  $send_headers         = ['Host'],
+  $split_cookie         = true,
+  $real_ip_header       = 'X-Forwarded-For',
+  $redact_authorization = false,
 ) {
   concat::fragment {'protocols-http':
     target  => '/etc/packetbeat/packetbeat.yml',
-    content => template('beats/protocols/protocols.http.erb'),
+    content => template('beats/packetbeat/protocols/protocols.http.erb'),
     order   => 11,
   }
 }

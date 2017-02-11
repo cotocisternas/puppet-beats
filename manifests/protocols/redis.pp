@@ -5,6 +5,6 @@ class beats::protocols::redis (
   concat::fragment {'protocols-redis':
     target  => '/etc/packetbeat/packetbeat.yml',
     content => template('beats/protocols/protocols.redis.erb'),
-    order   => 14,
+    order   => 11,
   }
 }
