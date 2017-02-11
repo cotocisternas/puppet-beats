@@ -1,8 +1,11 @@
   http:
-    ports: [<%= @http_ports.join(',') %>]
+    ports: [<%= @ports.join(',') %>]
     hide_keywords: <%= @hide_keywords.to_json %>
-    send_headers: <%= @send_headers.to_json %>
-    send_all_headers: <%= @send_all_headers %>
-    real_ip_header: "<%= @real_ip_header %>"
+    send_headers: <%= @send_headers %>
+    include_body_for: <%= @include_body_for.to_json %>
     split_cookie: <%= @split_cookie %>
-    redact_authorization: <%= @redact_authorization %>
+    real_ip_header: "<%= @real_ip_header %>"
+    send_request: <%= @send_request %>
+    send_response: <%= @send_response %>
+    transaction_timeout: <%= @transaction_timeout %>
+    max_message_size: <%= @max_message_size %>

@@ -1,11 +1,15 @@
 # HTTP
 class beats::protocols::http (
-  $http_ports           = ['80', '8080', '8000'],
+  $ports                = ['80', '8080', '8000'],
   $hide_keywords        = [],
-  $send_headers         = ['Host'],
+  $send_headers         = false,
+  $include_body_for     = [],
   $split_cookie         = true,
   $real_ip_header       = 'X-Forwarded-For',
-  $redact_authorization = false,
+  $send_request         = false,
+  $send_response        = false,
+  $transaction_timeout  = '10s',
+  $max_message_size     = '10485760',
 ) {
   concat::fragment {'protocols-http':
     target  => '/etc/packetbeat/packetbeat.yml',

@@ -1,5 +1,5 @@
   amqp:
-    ports: [<%= @ports %>]
+    ports: [<%= @ports.join(',') %>]
     max_body_length: <%= @max_body_length %>
     parse_headers: <%= @parse_headers %>
     parse_arguments: <%= @parse_arguments %>

@@ -1,2 +1,8 @@
   cassandra:
-    ports: [<%= @ports %>]
+    ports: [<%= @ports.join(',') %>]
+    send_request: <%= @send_request %>
+    send_request_header: <%= @send_request_header %>
+    send_response: <%= @send_response %>
+    send_response_header: <%= @send_response_header %>
+    compressor: "<%= @compressor %>"
+    ignored_ops: <%= @ignored_ops.to_json %>

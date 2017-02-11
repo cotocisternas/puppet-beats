@@ -1,13 +1,14 @@
 # Mysql
 class beats::protocols::mysql (
-  $protocol       = $beats::packetbeat::config::mysql_protocol,
-  $ports          = $beats::packetbeat::config::mysql_ports,
-  $max_rows       = $beats::packetbeat::config::mysql_max_rows,
-  $max_row_length = $beats::packetbeat::config::mysql_max_row_length
+  $protocol             = 'mysql',
+  $ports                = ['3306'],
+  $send_request         = false,
+  $send_response        = false,
+  $transaction_timeout  = '10s'
 ) {
   concat::fragment {'protocols-mysql':
     target  => '/etc/packetbeat/packetbeat.yml',
-    content => template('beats/protocols/protocols.database.erb'),
+    content => template('beats/packetbeat/protocols/protocols.database.erb'),
     order   => 11,
   }
 }

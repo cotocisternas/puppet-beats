@@ -1,8 +1,5 @@
   <%= @protocol %>:
     ports: [<%= @ports.join(',') %>]
-<% if @max_rows %>
-    max_rows: <%= @max_rows %>
-<% end -%>
-<% if @max_row_length %>
-    max_row_length: <%= @max_row_length %>
-<% end -%>
+    send_request: <%= @send_request %>
+    send_response: <%= @send_response %>
+    transaction_timeout: <%= @transaction_timeout %>

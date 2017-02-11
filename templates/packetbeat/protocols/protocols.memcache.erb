@@ -1,2 +1,9 @@
   memcache:
-    ports: [<%= @ports %>]
+    ports: [<%= @ports.join(',') %>]
+    parseunknown: <%= @parseunknown %>
+    maxvalues: <%= @maxvalues %>
+    maxbytespervalue: <%= @maxbytespervalue %>
+    udptransactiontimeout: <%= @udptransactiontimeout %>
+    send_request: <%= @send_request %>
+    send_response: <%= @send_response %>
+    transaction_timeout: <%= @transaction_timeout %>
