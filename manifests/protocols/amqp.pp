@@ -11,7 +11,7 @@ class beats::protocols::amqp (
 ) {
   concat::fragment {'protocols-amqp':
     target  => '/etc/packetbeat/packetbeat.yml',
-    content => template('beats/protocols/protocols.amqp.erb'),
+    content => template('beats/packetbeat/protocols/protocols.amqp.erb'),
     order   => 11,
   }
 }
