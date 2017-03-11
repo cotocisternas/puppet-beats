@@ -1,7 +1,7 @@
 # Postgres
 class beats::protocols::pgsql (
   $protocol             = 'pgsql',
-  $ports                = ['3306'],
+  $ports                = ['5432'],
   $send_request         = false,
   $send_response        = false,
   $transaction_timeout  = '10s'

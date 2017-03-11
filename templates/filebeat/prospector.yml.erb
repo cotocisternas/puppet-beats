@@ -1,11 +1,13 @@
+
     - input_type: <%= @input_type %>
       paths:<% @paths.each do |path| %>
         - <%= path %>
       <%- end -%>
       encoding: <%= @encoding %>
-<% if @exclude_lines -%>      exclude_lines: <%= @exclude_lines %><% end -%>
-<% if @include_lines -%>      include_lines: <%= @include_lines %><% end -%>
-<% if @exclude_files -%>      exclude_files: <%= @exclude_files %><% end -%>
+<% if @exclude_lines -%>      exclude_lines: <%= @exclude_lines %> <% end -%>
+<% if @include_lines -%>      include_lines: <%= @include_lines %> <% end -%>
+<% if @exclude_files -%>      exclude_files: <%= @exclude_files %> <% end -%>
+
       fields_under_root: <%= @fields_under_root %>
       ignore_older: <%= @ignore_older %>
       document_type: <%= @document_type %>
@@ -21,3 +23,4 @@
       fields:<% @fields.each do |key, value| %>
         <%= key -%>: <%= value %>
       <%- end -%>
+      

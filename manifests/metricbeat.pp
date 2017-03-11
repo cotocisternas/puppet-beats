@@ -1,7 +1,7 @@
 # Metricbeat class
 class beats::metricbeat (
   $ensure           = present,
-  $period           = 10,
+  $period           = '30s',
   $procs            = ['.*'],
 ){
 

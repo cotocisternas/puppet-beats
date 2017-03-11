@@ -1,0 +1,6 @@
+#------------------------------- Apache Module -------------------------------
+- module: apache
+  metricsets: ["status"]
+  enabled: true
+  period: <%= @period %>
+  hosts: ["http://127.0.0.1"]
